@@ -1,5 +1,6 @@
 package application;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import chess.ChessException;
@@ -32,7 +33,7 @@ public class Program {
 				System.out.println(e.getMessage());
 				sc.nextLine();
 			}
-			catch(RuntimeException e) {
+			catch(InputMismatchException e) {
 				System.out.println(e.getMessage());
 				sc.nextLine();
 			}
