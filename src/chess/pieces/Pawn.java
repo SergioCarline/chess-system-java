@@ -43,8 +43,10 @@ public class Pawn extends ChessPiece {
 			//# special move en passant white
 			if(position.getRow() == 3) {
 				Position left = new Position(position.getRow(), position.getColumn() - 1);
-				if(getBoard().positionExists(left) && isThereOpponentPiece(left) && getBoard().piece(left) == chessMatch.getEnPassantVulnerable());{
-				mat[left.getRow() - 1][left.getColumn()] = true;
+				if(position.getColumn() != 0) {
+					if(getBoard().positionExists(left) && isThereOpponentPiece(left) && getBoard().piece(left) == chessMatch.getEnPassantVulnerable());{
+						mat[left.getRow() - 1][left.getColumn()] = true;
+						}	
 				}
 				Position right = new Position(position.getRow(), position.getColumn() + 1);
 				if(position.getColumn() != 7) {
@@ -82,8 +84,10 @@ public class Pawn extends ChessPiece {
 					}
 				}
 				Position right = new Position(position.getRow(), position.getColumn() + 1);
-				if(getBoard().positionExists(right) && isThereOpponentPiece(right) && getBoard().piece(right) == chessMatch.getEnPassantVulnerable());{
-				mat[right.getRow() + 1][right.getColumn()] = true;
+				if(position.getColumn() != 7) {
+					if(getBoard().positionExists(right) && isThereOpponentPiece(right) && getBoard().piece(right) == chessMatch.getEnPassantVulnerable());{
+						mat[right.getRow() + 1][right.getColumn()] = true;
+						}					
 				}
 			}
 		}
